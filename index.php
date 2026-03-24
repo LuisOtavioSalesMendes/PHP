@@ -1,41 +1,51 @@
 <?php
-$usuario_correto = "Professor";
-$senha_correta = "DEVISATE";
+$usuario = [
+    [
+    "nome" => "Julia",
+    "id" => "12312322",
+    "senha" => "12345678Maria",
+    "saldo" => 365.00
+    ],
+    [
+    "nome" => "Regina",
+    "id" => "7648663",
+    "senha" => "87654321JUliana",
+    "saldo" => 995.47
+    ]
+];
 
+//CONTAS
+$contas = [
+    [
+    "desc" => "Conta d'agua",
+    "valor" => 55.00,
+    "tipo" => "Pagar"
+    ],
+    [
+    "desc" => "Conta energia",
+    "valor" => 220.00,
+    "tipo" => "Pagar"    
+    ],
+    [
+    "desc" => "Dividendo",
+    "valor" => 75.00,
+    "tipo" => "receber"
+    ]
+//CONTAS
 
-$data = date("d/m/Y");
-$hora = date("H:i:s");
+];
 
-
-if (isset($_POST["botao"])) {
-    $nome = $_POST["usuario"];
-    $senha = $_POST["senha"];
-
-
-    if ($nome === $usuario_correto && $senha === $senha_correta) {
-        echo "Acesso liberado em $data às $hora!";
-    } else {
-        echo "Acesso negado!";
-    }
+//PESSOAS
+foreach ($usuario as $udado) {
+    echo "Nome: ".$udado["nome"]."<br>";
+    echo "ID: ".$udado["id"]."<br>";
+    echo "Saldo: ".$udado["saldo"]."<br>";
+};
+ echo "<br>";
+//CONTAS
+foreach ($contas as $cont) {
+    echo "Descrição: ".$cont["desc"]."<br>";
+    echo "Valor: ".$cont["valor"]."<br>";
+    echo "Tipo: ".$cont["tipo"]."<br>";
 }
 ?>
-
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <form method="POST">
-        <label>Usuário:</label><br>
-        <input type="text" name="usuario"><br>
-       
-        <label>Senha:</label><br>
-        <input type="password" name="senha"><br>
-       
-        <button type="submit" name="botao">Enviar</button>
-    </form>
-</body>
-</html>
