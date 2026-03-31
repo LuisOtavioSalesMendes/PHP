@@ -43,9 +43,16 @@ foreach ($usuario as $udado) {
 };
  echo "<br>";
 //CONTAS
-foreach ($contas as $cont) {
-    echo "Descrição: ".$cont["desc"]."<br>";
-    echo "Valor: ".$cont["valor"]."<br>";
-    echo "Tipo: ".$cont["tipo"]."<br>";
-}
+//foreach ($contas as $cont) {
+  //  echo "Descrição: ".$cont["desc"]."<br>";
+   // echo "Valor: ".$cont["valor"]."<br>";
+   // echo "Tipo: ".$cont["tipo"]."<br>";
+//}
+foreach($contas as $co) {
+    if ($co["tipo"] == "receber") {
+        echo "Descrição: ".$co["desc"]."<br>";
+    echo "Valor: ".$co["valor"]."<br>";
+    }
+};
+
 ?>
