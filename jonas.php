@@ -1,6 +1,6 @@
 <?php
-include "secundarios.php";
-include "config.php";
+include 'secundarias.php';
+include 'config.php';
 
 $erro = "";
 
@@ -9,8 +9,12 @@ if ($_POST) {
     if(
         $_POST["usuario"] == $manos["usuario"] &&
         $_POST["senha"] == $manos["senha"]
-    )
+    ) {
+        $_SESSION["usuario"] = $manos["usuario"];
+        $_SESSION["perfil"] = $manos["perfil"];
+        exit;
+    }
    }
+   $erro = "usuario ou senha invalidos";
 }
-
 ?>
